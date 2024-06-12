@@ -1,0 +1,77 @@
+/* .bg1.html-gp{
+    font-size: 40px;
+}
+.bg,.bg1{
+    text-decoration: underline;
+}
+.box1{
+   
+    width: 200px;
+    margin: 10px;
+    padding: 12px;
+    border: 2px solid black;
+    background-color: aquamarine;
+}
+
+.box2{
+    width: 200px;
+    margin: 10px;
+    padding: 12px;
+    border: 2px solid black;
+    background-color: aquamarine;
+    box-sizing: border-box;
+}
+*/
+/* *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}  */
+
+/* div{
+    background-color: red;
+    font-size: 10px;
+}
+
+p{
+    background-color: yellow;
+    font-size: 4em;
+    width: 2em;
+} */
+
+/* .btn{
+    display: block;
+    background-color: rgb(4, 216, 145);
+    color: rgb(255, 255, 255);
+    width: fit-content;
+    margin: 10px auto;
+
+    font-size: 16px;
+    padding: 0.5em 1em;
+    border-radius: 0.5em;
+    border: none;
+}
+.btn1{
+    font-size: 24px;
+}
+.btn2{
+    font-size: 8px;
+}
+button{
+    background-color: aquamarine;
+    height: 100vh;
+    width:100vw;
+   
+} */
+
+li>h3{
+    color: red;
+}
+
+div li{
+    color: blue;
+}
+
+h3+p{
+    color: blanchedalmond;
+}

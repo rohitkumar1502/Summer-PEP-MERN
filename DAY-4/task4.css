@@ -1,0 +1,98 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* only apply on body one child only */
+.container>div{ 
+    background-color: orange;
+    margin: 20px;
+    height: 200px;
+    width: 200px;
+}
+.c1, .c2, .c3, .c4{
+    background-color: aquamarine;
+    color: white;
+    font-size: 30px;
+    height: 70px;
+    width: 70px;
+
+}
+
+/* .c2{
+    position: relative;
+    left: 75px;
+    top: 5px;
+}
+.c3{
+    position: relative;
+    left: 125px;
+    
+}
+.c4{
+    position: relative;
+    top: 58px;
+}  */
+/* task4b */
+/* .c3{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+.c2{
+    position: relative;
+    left: 70px;
+    background-color: black;
+
+   
+}
+.c1{
+    position: relative;
+    top: 20px;
+    left: 20px;
+    z-index: 1;
+} */
+
+/* tak4bb */
+/* .c1{
+    position: absolute;
+}
+.c3{
+    position: absolute;
+}
+.c4{
+    position: relative;
+    z-index: 1;
+} */
+
+
+/* .parent{
+    background-color: aqua;
+    padding: 24px;
+
+
+}
+.child{
+    background-color: blanchedalmond;
+    padding: 24px;
+}
+
+@media (width <= 1000px){
+    .parent{
+        background-color: aquamarine;
+    }
+} */
+
+.container{
+    height: 500px;
+    background-color: blue;
+    margin: 100px;
+}
+
+.child{
+    height: 40px;
+    width: 40px;
+    background-color: aquamarine;
+    position: sticky;
+    top: 40px;
+}
