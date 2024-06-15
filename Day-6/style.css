@@ -1,0 +1,9 @@
+.error {
+    color: red;
+}
+.card {
+    display: none;
+    border: 1px solid #ccc;
+    padding: 16px;
+    margin-top: 20px;
+}
