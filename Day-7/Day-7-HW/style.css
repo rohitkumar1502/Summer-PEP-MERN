@@ -3,6 +3,10 @@
     margin: 0;
     box-sizing: border-box;
 }
+#root{
+  display: flex;
+  flex-wrap: wrap;
+}
 .product-card {
     border: 0.02rem solid;
     display: flex;
