@@ -64,7 +64,7 @@ const app = http.createServer(async (req, res) => {
 
         //         </div>`);
       }
-      text = final.replace("$DETAILS$", final);
+      text = text.replace("$DETAILS$", final);
       res.end(text);
       break;
     }
