@@ -208,8 +208,54 @@ console.log(productPrice);
 //Event
 
 //document.getElementById("owl").onclick = () => alert("OWL Image Cliked");
-document.getElementById('owl').addEventListener('dblclick' ,() => alert("Clicked"), false)  // default false hota hai
+// document
+//   .getElementById("owl")
+//   .addEventListener("dblclick", () => alert("Clicked"), false); // default false hota hai
 
-// type, timestamp, defaultPrevented, target, toElement, currentTarget, clientX, cclientY, screenX, screenY, altkey, ctrlkey, shiftkey,keyCode  
+// type, timestamp, defaultPrevented, target, toElement, currentTarget, clientX, clientY, screenX, screenY, altkey, ctrlkey, shiftkey,keyCode
 
 //event propogation
+// document
+//   .getElementById("images")
+//   .addEventListener("click", (e) => console.log("Click inside the ul"), false);
+// document.getElementById("owl").addEventListener(
+//   "click",
+//   (e) => {
+//     console.log("Click owl");
+//     e.stopPropagation();
+//   },
+//   false
+// );
+
+// document
+//   .getElementById("images")
+//   .addEventListener("click", (e) => console.log("Click inside the ul"), true);
+// document
+//   .getElementById("owl")
+//   .addEventListener("click", (e) => console.log("Click owl"), true);
+
+
+// document.getElementById('google').addEventListener('click', (e)=>{
+//     e.preventDefault();
+//    // e.stopPropagation();
+//     console.log("Googlr cliked")
+// }, false)
+/*
+document.querySelector('#images').addEventListener('click', (e)=>{
+    console.log(e.target.tagName);
+    // console.log(e.target.parentNode);
+   
+
+    if(e.target.tagName === 'IMG'){
+        let removeIt = e.target.parentNode;
+        console.log(e.target.id);
+        removeIt.remove();
+    }
+
+    // const removeIt = e.target.parentNode;
+    // removeIt.remove();
+})
+
+*/
+
+//Async
