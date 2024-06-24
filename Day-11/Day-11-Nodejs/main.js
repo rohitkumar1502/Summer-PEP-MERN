@@ -1,7 +1,6 @@
 const http = require("http");
 const fsPromises = require("fs/promises");
 const url = require("url");
-
 const fs = require("fs");
 
 const dataText = fs.readFileSync(`${__dirname}/data.json`);
@@ -30,6 +29,7 @@ const app = http.createServer(async (req, res) => {
                   <h3>${data[i].title}</h3>
                   <img src="${data[i].thumbnail}" alt="Product-Image">
                   <p class="des">${data[i].description}</p>
+                  <h3>$ ${data[i].price}</h3>
                   <a href="/view?id=${data[i].id}" class= "button button2">Details</a>
                 </div>`;
       }
@@ -40,8 +40,8 @@ const app = http.createServer(async (req, res) => {
       break;
     }
     case "/view": {
-      const productId = query.id;
-      const result = data.find((data) => data.id === parseInt(productId));
+      //const result = data.find((data) => data.id === parseInt(productId));
+      const result = data.find((data) => data.id == query.id);
       const bf = await fsPromises.readFile(`${__dirname}/pages/details.html`);
       let text = bf.toString();
       let final =""
@@ -52,6 +52,7 @@ const app = http.createServer(async (req, res) => {
                 <div class="product-details">
                   <h3>${result.title}</h3>
                   <img src="${result.thumbnail}" alt="Product-Image">
+                  <h3>$ ${result.price}</h3>
                   <p class="des">${result.description}</p>
 
                 </div>`
