@@ -9,19 +9,19 @@ const {
   patchProduct,
   validateForTitleAndPage,
   getDataMiddleware,
-  validateID
+  validateID,
 } = require("../controllers/productController.js");
 
-productRoute.use(getDataMiddleware)
+productRoute.use(getDataMiddleware);
 
-productRoute.route("/")
-.get(getProducts).
-post(validateForTitleAndPage, replaceProducts);
-productRoute.route("/:id")
-.put(validateID,validateForTitleAndPage, updateProduct)
-.delete(validateID,deleteProducts)
-.patch(validateID,patchProduct);
-
-
+productRoute
+  .route("/")
+  .get(getProducts)
+  .post(validateForTitleAndPage, replaceProducts);
+productRoute
+  .route("/:id")
+  .put(validateID, validateForTitleAndPage, updateProduct)
+  .delete(validateID, deleteProducts)
+  .patch(validateID, patchProduct);
 
 module.exports = productRoute;
