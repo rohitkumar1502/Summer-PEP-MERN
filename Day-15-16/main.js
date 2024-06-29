@@ -7,4 +7,4 @@ const productRouter = require("./routes/productsRoutes");
 app.use("/api/v1/products",productRouter);
 app.listen(process.env.PORT, ()=>{
     console.log(`----------Server Started at ${process.env.PORT}----------`)
-})
+}) 

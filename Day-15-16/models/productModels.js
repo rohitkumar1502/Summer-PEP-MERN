@@ -30,5 +30,12 @@ const productSchema = new mongoose.Schema(
     }
 )
 
+
+// const productSchema = new mongoose.Schema({
+//     pizza_name: String,
+//     unit_price: Number,
+//     total_price: Number,
+//     pizza_size: String
+// })
 const productModel = mongoose.model('products', productSchema);
 module.exports = productModel;

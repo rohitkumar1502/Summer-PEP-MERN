@@ -1,8 +1,8 @@
 // const { MongoClient , ServerApiVersion} = require("mongodb");
 const mongoose = require("mongoose");
 const uri =
-  "mongodb+srv://<usename>:<password>@cluster0.xlrkbeu.mongodb.net/<dbname>?appName=Cluster0";
-
+ // "mongodb+srv://<usename>:<password>@cluster0.xlrkbeu.mongodb.net/<dbname>?appName=Cluster0";
+ "mongodb+srv://<usename>:<password>@myatlasclusteredu.cnvw2mx.mongodb.net/<dbname>?appName=myAtlasClusterEDU";
 let m_uri = uri;
 m_uri = m_uri.replace("<usename>", process.env.DB_USERNAME);
 m_uri = m_uri.replace("<password>", process.env.DB_PASSWORD);
