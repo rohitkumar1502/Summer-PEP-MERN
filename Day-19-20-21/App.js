@@ -5,6 +5,7 @@ const root = ReactDOM.createRoot(parent);
 import "./style.css";
 import HomePage from "./src/pages/homePage";
 import SearchPage from "./src/pages/amazoneSearchPage";
+import Revision from "./src/pages/revision";
 
 
 const Catoge = ["Amazon Mini Tv", "Fresh", "Sell", "Best Selller"];
@@ -105,7 +106,8 @@ const App = () => {
   return (
     <div>
       {/* <HomePage Catoge= {Catoge} productInfoCard= {productInfoCard} /> */}
-      <SearchPage Catoge= {Catoge} />
+      {/* <SearchPage Catoge= {Catoge} /> */}
+      <Revision />
 
     </div>
   );

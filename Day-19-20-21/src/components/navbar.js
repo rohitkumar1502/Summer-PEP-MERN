@@ -1,7 +1,15 @@
 import { IoSearchSharp } from "react-icons/io5";
 
 const NavBar = (props) => {
-  const {getData} = props;
+  const {setProducts}= props
+  
+  async function getData(e) {
+    const val = e.target.value;
+    const res = await fetch(`https://dummyjson.com/products/search?q=${val}`);
+    const data = await res.json();
+    setProducts(data.products);
+    console.log("API! Called");
+  }
 
 
   return (

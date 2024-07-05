@@ -103,3 +103,93 @@
         }
     }
 }
+
+.card {
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    width: 70%;
+    height: 300px;
+    
+    margin: 10px auto;
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    padding: 17px;
+    display: flex;
+
+  }
+  
+  .card img {
+   
+    border-radius: 10px 10px 0 0;
+  }
+  
+  .card .title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 16px 0;
+  }
+  
+  .card .rating {
+    display: flex;
+    align-items: center;
+  }
+  
+  .card .rating span {
+    font-size: 14px;
+    margin-left: 4px;
+    color: #ff9900;
+  }
+  
+  .card .price {
+    font-size: 24px;
+    color: #b12704;
+    margin: 8px 0;
+  }
+  
+  .card .original-price {
+    text-decoration: line-through;
+    color: #565959;
+    font-size: 16px;
+  }
+  
+  .card .discount {
+    color: #b12704;
+    font-size: 16px;
+  }
+  
+  .card .delivery {
+    color: #007185;
+    font-size: 16px;
+    margin: 8px 0;
+  }
+  
+  .card .prime {
+    color: #007185;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .card .add-to-cart {
+    display: inline-block;
+    background-color: #ffd814;
+    color: #0f1111;
+    padding: 8px 16px;
+    border: 1px solid #ffd814;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  .card .more-buying-choices {
+    font-size: 14px;
+    color: #007185;
+    margin: 8px 0;
+  }
+  
+  .card .more-buying-choices a {
+    color: #007185;
+    text-decoration: none;
+  }
+  

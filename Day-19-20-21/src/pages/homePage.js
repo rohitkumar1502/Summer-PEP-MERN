@@ -1,5 +1,3 @@
-import { IoSearchSharp } from "react-icons/io5";
-import { CiMenuBurger } from "react-icons/ci";
 import ProductInfoCard from "../components/productinfoCard";
 import NavBar from "../components/navbar";
 import CatBar from "../components/categorybar";
