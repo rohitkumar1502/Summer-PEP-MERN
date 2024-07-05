@@ -1,11 +1,10 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import CatBar from "../components/categorybar";
 import NavBar from "../components/navbar";
 
 const SearchPage = (props) => {
-  const { Catoge } = props;
+  const { Catoge , setSearchText, searchText} = props;
   //  let searchText = ''
-  // const [searchText, setSearchText] = useState("");
   // console.log("initially: ", searchText);
 
   const [product, setProducts] = useState([]);
@@ -16,9 +15,21 @@ const SearchPage = (props) => {
   //   setSearchText(val);
   // };
 
+  async function getData() {
+    // const val = e.target.value;
+    const res = await fetch(`https://dummyjson.com/products/search?q=${searchText}`);
+    const data = await res.json();
+    setProducts(data.products);
+    
+  }
+
+  useEffect(()=>{
+    getData();
+  },[searchText])
+
   return (
     <>
-      <NavBar setProducts={setProducts} />
+      <NavBar setSearchText={setSearchText} />
       <CatBar Catoge={Catoge} />
       {/* <div>Text is : {searchText}</div> */}
       {/* <button onClick={getData}>Get Data</button> */}

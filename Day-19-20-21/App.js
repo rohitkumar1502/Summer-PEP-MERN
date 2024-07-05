@@ -1,14 +1,28 @@
 import ReactDOM from "react-dom/client";
+import { useState } from "react";
 const parent = document.querySelector("#root");
+import * as ReactDOM from "react-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const root = ReactDOM.createRoot(parent);
 import "./style.css";
 import HomePage from "./src/pages/homePage";
 import SearchPage from "./src/pages/amazoneSearchPage";
 import Revision from "./src/pages/revision";
+import ProductInfo from "./src/components/productInfo";
 
-
-const Catoge = ["Amazon Mini Tv", "Fresh", "Sell", "Best Selller"];
+const Catoge = [
+  "Fresh",
+  "Amazon miniTV",
+  "Sell",
+  "Best Sellers",
+  "Mobiles",
+  "Today's Deals",
+  "Prime Fashion Electronics",
+  "Customer Service",
+  "New Releases Amazon Pay",
+  "Home & Kitchen",
+];
 
 const productInfoCard = [
   {
@@ -102,17 +116,46 @@ const productInfoCard = [
 ];
 
 const App = () => {
+  const [searchText, setSearchText] = useState("");
   // return <div>{HomePage()}</div>;
-  return (
-    <div>
-      {/* <HomePage Catoge= {Catoge} productInfoCard= {productInfoCard} /> */}
-      {/* <SearchPage Catoge= {Catoge} /> */}
-      <Revision />
 
-    </div>
-  );
+  // return (
+  //   <div>
+  //     {/* <HomePage Catoge= {Catoge} productInfoCard= {productInfoCard} />
+  //     <SearchPage Catoge= {Catoge} /> */}
+  //     {/* <Revision Catoge= {Catoge}/> */}
+
+  //   </div>
+  // );
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: (
+        <HomePage
+          searchText={searchText}
+          setSearchText={setSearchText}
+          Catoge={Catoge}
+          productInfoCard={productInfoCard}
+        />
+      ),
+    },
+    {
+      path: "search",
+      element: (
+        <SearchPage
+          Catoge={Catoge}
+          searchText={searchText}
+          setSearchText={setSearchText}
+        />
+      ),
+    },
+    {
+      path: 'search/:id',
+      element: <ProductInfo />
+    }
+  ]);
+  return <RouterProvider router={router} />;
 };
 
 // root.render(App())
 root.render(<App />);
-

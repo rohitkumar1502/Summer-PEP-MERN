@@ -1,13 +1,20 @@
+import { useNavigate } from "react-router-dom";
 import ProductInfoCard from "../components/productinfoCard";
 import NavBar from "../components/navbar";
 import CatBar from "../components/categorybar";
 
+
 const HomePage = (props) => {
-  const {Catoge, productInfoCard} = props
+  const {Catoge, productInfoCard, searchText, setSearchText} = props
+  const navigate = useNavigate();
+
+  const openSearchPage = ()=> {
+    navigate("/search")
+  }
   return (
     <div>
-      <NavBar/>
-      <CatBar Catoge= {Catoge}/>
+      <NavBar setSearchText={setSearchText} openSearchPage={openSearchPage}/>
+      <CatBar Catoge= {Catoge} />
      
       <div className="home-card-page">
         <img
