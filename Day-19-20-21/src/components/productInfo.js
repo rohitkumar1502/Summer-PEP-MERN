@@ -1,8 +1,25 @@
-import { useParams } from "react-router-dom"
+import { useParams } from "react-router-dom";
 
-const ProductInfo = ()=>{
-    const params = useParams();
-    return <h1>Info Page{JSON.stringify(params)}</h1>
-}
+const ProductInfo = (props) => {
+  const { product } = props;
+  const { id } = useParams();
 
-export default ProductInfo
+  const foundProduct = product.find((item) => item.id === parseInt(id));
+
+  console.log(product);
+  return (
+    <>
+      {foundProduct ? (
+        <div>
+          <h1>{foundProduct.name}</h1>
+          <p>{foundProduct.description}</p>
+          <p>Price: ${foundProduct.price}</p>
+        </div>
+      ) : (
+        <p>Product not found</p>
+      )}
+    </>
+  );
+};
+
+export default ProductInfo;

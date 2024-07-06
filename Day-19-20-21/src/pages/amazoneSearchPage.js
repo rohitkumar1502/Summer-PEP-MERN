@@ -1,13 +1,14 @@
 import { useState,useEffect } from "react";
+import {Link} from 'react-router-dom'
 import CatBar from "../components/categorybar";
 import NavBar from "../components/navbar";
 
 const SearchPage = (props) => {
-  const { Catoge , setSearchText, searchText} = props;
+  const { Catoge , setSearchText, searchText, getData, product} = props;
   //  let searchText = ''
   // console.log("initially: ", searchText);
 
-  const [product, setProducts] = useState([]);
+
 
   // const handleSearch = (e) => {
   //   const val = e.target.value;
@@ -15,13 +16,7 @@ const SearchPage = (props) => {
   //   setSearchText(val);
   // };
 
-  async function getData() {
-    // const val = e.target.value;
-    const res = await fetch(`https://dummyjson.com/products/search?q=${searchText}`);
-    const data = await res.json();
-    setProducts(data.products);
-    
-  }
+ 
 
   useEffect(()=>{
     getData();
@@ -50,7 +45,8 @@ const SearchPage = (props) => {
             <div className="prime">
               <span>prime</span>
             </div>
-            <div className="add-to-cart">Add to cart</div>
+            <Link  className="add-to-cart" to={`/search/${elem.id}`}>More Details</Link>
+            {/* <div className="add-to-cart">Add to cart</div> */}
             <div className="more-buying-choices">
               More Buying Choices
               <a href="#"> ${elem.price} (5 new offers)</a>

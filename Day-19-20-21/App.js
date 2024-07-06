@@ -117,6 +117,7 @@ const productInfoCard = [
 
 const App = () => {
   const [searchText, setSearchText] = useState("");
+  const [product, setProducts] = useState([]);
   // return <div>{HomePage()}</div>;
 
   // return (
@@ -127,11 +128,21 @@ const App = () => {
 
   //   </div>
   // );
+  async function getData() {
+    // const val = e.target.value;
+    const res = await fetch(
+      `https://dummyjson.com/products/search?q=${searchText}`
+    );
+    const data = await res.json();
+    setProducts(data.products);
+  }
   const router = createBrowserRouter([
     {
       path: "/",
       element: (
         <HomePage
+          product={product}
+          getData={getData}
           searchText={searchText}
           setSearchText={setSearchText}
           Catoge={Catoge}
@@ -143,6 +154,8 @@ const App = () => {
       path: "search",
       element: (
         <SearchPage
+          product={product}
+          getData={getData}
           Catoge={Catoge}
           searchText={searchText}
           setSearchText={setSearchText}
@@ -150,9 +163,9 @@ const App = () => {
       ),
     },
     {
-      path: 'search/:id',
-      element: <ProductInfo />
-    }
+      path: "search/:id",
+      element: <ProductInfo getData={getData} product={product} />,
+    },
   ]);
   return <RouterProvider router={router} />;
 };

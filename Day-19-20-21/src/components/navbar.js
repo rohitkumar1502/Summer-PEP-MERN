@@ -20,7 +20,7 @@ const NavBar = ({setSearchText, openSearchPage}) => {
       <div className="home-nav-serch">
         <select></select>
         <input onChange={handleSearch}></input>
-        <button onClick= {openSearchPage}>
+        <button className= "bttn" onClick= {openSearchPage}>
           <IoSearchSharp />
         </button>
       </div>
