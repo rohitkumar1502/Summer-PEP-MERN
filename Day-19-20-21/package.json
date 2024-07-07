@@ -2,7 +2,7 @@
   "name": "day-19",
   "version": "1.0.0",
   "description": "",
-  "main": "App.js",
+ 
   "scripts": {
     "start": "parcel index.html && parcel watch index.html"
   },
