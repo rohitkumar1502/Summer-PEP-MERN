@@ -1,4 +1,4 @@
-import { useState,useEffect } from "react";
+import { useEffect } from "react";
 import {Link} from 'react-router-dom'
 import CatBar from "../components/categorybar";
 import NavBar from "../components/navbar";

@@ -8,7 +8,6 @@ const root = ReactDOM.createRoot(parent);
 import "./style.css";
 import HomePage from "./src/pages/homePage";
 import SearchPage from "./src/pages/amazoneSearchPage";
-import Revision from "./src/pages/revision";
 import ProductInfo from "./src/components/productInfo";
 
 const Catoge = [
