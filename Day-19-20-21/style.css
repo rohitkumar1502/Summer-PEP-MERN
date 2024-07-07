@@ -108,7 +108,7 @@
     border: 1px solid #e0e0e0;
     border-radius: 10px;
     width: 70%;
-    height: 300px;
+    /* height: 300px; */
     
     margin: 10px auto;
     font-family: Arial, sans-serif;
@@ -127,11 +127,13 @@
     font-size: 18px;
     font-weight: bold;
     margin: 16px 0;
+    padding-bottom: 5px;
   }
   
   .card .rating {
     display: flex;
     align-items: center;
+    padding-top: 5px;
   }
   
   .card .rating span {
@@ -170,6 +172,7 @@
     font-size: 16px;
     display: flex;
     align-items: center;
+    padding-bottom: 5px;
   }
   
   .card .add-to-cart {
