@@ -2,26 +2,11 @@ import { useEffect } from "react";
 import {Link} from 'react-router-dom'
 import CatBar from "../components/categorybar";
 import NavBar from "../components/navbar";
+import useGetProducts from "../hooks/useGetProducts";
 
 const SearchPage = (props) => {
-  const { Catoge , setSearchText, searchText, getData, product} = props;
-  //  let searchText = ''
-  // console.log("initially: ", searchText);
-
-
-
-  // const handleSearch = (e) => {
-  //   const val = e.target.value;
-  //   // searchText = val
-  //   setSearchText(val);
-  // };
-
- 
-
-  useEffect(()=>{
-    getData();
-  },[searchText])
-
+  const { Catoge , setSearchText, searchText} = props;
+  const product = useGetProducts(searchText)
   return (
     <>
       <NavBar setSearchText={setSearchText} />

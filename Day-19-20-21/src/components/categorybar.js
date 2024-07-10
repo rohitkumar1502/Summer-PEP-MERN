@@ -1,11 +1,11 @@
-import { CiMenuBurger } from "react-icons/ci";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 const CatBar = (props) => {
     const {Catoge} = props
   return (
     <div className="home-cat">
-      <button>
-        <CiMenuBurger />
+      <button className="all-btn">
+        <GiHamburgerMenu className="burgar"/>
         ALL
       </button>
       <div className="cat-item">
