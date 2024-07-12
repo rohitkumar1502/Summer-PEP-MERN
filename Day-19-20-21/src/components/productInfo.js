@@ -1,14 +1,20 @@
 import { useParams } from "react-router-dom";
+import useGetProductById from "../hooks/useGetProductById";
+import NavBar from "./navbar";
 
 const ProductInfo = (props) => {
-  const { product } = props;
+  const { setSearchText } = props;
   const { id } = useParams();
 
-  const foundProduct = product.find((item) => item.id === parseInt(id));
+  const foundProduct = useGetProductById(id);
 
-  console.log(product);
+  const openSearchPage = () => {
+      navigate("/search");
+  };
+
   return (
     <>
+    <NavBar setSearchText={setSearchText} openSearchPage={openSearchPage}/>
       {foundProduct ? (
         <div>
           <div  className="card">
@@ -26,6 +32,9 @@ const ProductInfo = (props) => {
             <div className="discount">(50% off)</div>
             <div className="delivery">FREE delivery Sun, 7 Jul</div>
             <div className="prime">
+            {foundProduct?.images?.map((imgLink) => {
+                    return <img src={`${imgLink}`} height="200px" />;
+                })}
               <span>prime</span>
             </div>
             <div  className="add-to-cart" >Buy now</div>

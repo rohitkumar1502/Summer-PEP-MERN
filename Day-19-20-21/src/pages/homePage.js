@@ -4,10 +4,10 @@ import NavBar from "../components/navbar";
 import CatBar from "../components/categorybar";
 import useGetProducts from "../hooks/useGetProducts";
 
-const HomePage = (props) => {
-  const { Catoge, productInfoCard, setSearchText } = props;
+const HomePage = () => {
+ 
   const navigate = useNavigate();
-  const products = useGetProducts();
+  const products = useGetProducts({ isSearchTextDependent: false });
 
   const openSearchPage = () => {
     navigate("/search");
@@ -29,8 +29,8 @@ const HomePage = (props) => {
   const dummy = [0, 1, 2, 3];
   return (
     <div>
-      <NavBar setSearchText={setSearchText} openSearchPage={openSearchPage} />
-      <CatBar Catoge={Catoge} />
+      <NavBar openSearchPage={openSearchPage} />
+      <CatBar />
 
       <div className="home-card-page">
         <img

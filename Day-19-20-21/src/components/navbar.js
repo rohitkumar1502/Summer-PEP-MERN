@@ -1,10 +1,12 @@
+import { useContext } from "react";
 import { IoSearchSharp } from "react-icons/io5";
 import amazon from "../../assets/Amazon-India-Logo-PNG-White.png";
 import { FaShoppingCart } from "react-icons/fa";
+import AppContext from "../contexts/appContext";
 
 
-const NavBar = ({ setSearchText, openSearchPage }) => {
-  // const {setProducts}= props
+const NavBar = ({openSearchPage }) => {
+  const { setSearchText , cart} = useContext(AppContext);
 
   const handleSearch = (e) => {
     setSearchText(e.target.value);
@@ -16,7 +18,7 @@ const NavBar = ({ setSearchText, openSearchPage }) => {
 
       <p>
         Address: <br />
-        Lovely Professional University
+        Muzaffarpur, Bihar
       </p>
       <div className="home-nav-serch">
         <select></select>
@@ -30,7 +32,7 @@ const NavBar = ({ setSearchText, openSearchPage }) => {
         <h6>Hello, sign in</h6>
         <h4>Account & Lists</h4>
       </div>
-      <div style={{"position":"relative", "margin-right":"10px"}}>
+      <div style={{"position":"relative", "margin-right":"10px"}}  title={JSON.stringify(cart)}>
         <FaShoppingCart className="textdec" />
 
         <span className="count-product">0</span>
