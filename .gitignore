@@ -10,3 +10,5 @@ Day-18/ReactApp/dist
 Day-19-20-21/.parcel-cache
 Day-19-20-21/dist
 Day-19-20-21/node_modules
+Day-19-20-21/server/node_modules
+Day-19-20-21/server/.env
