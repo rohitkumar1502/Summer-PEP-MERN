@@ -13,7 +13,7 @@ const ProductInfoCard = (props) => {
               <div className="products-item-cards-container">
                   {data.map((elem) => (
                       <div className="products-item-card">
-                          <img src={elem.thumbnail} />
+                          <img  src={elem.thumbnail} />
                           <Link to={`/search/${elem.id}`}>{elem.title}</Link>
                       </div>
                   ))}

@@ -1,8 +1,8 @@
 import { useState } from "react";
-import useSignUp from "../hooks/useSignUp";
+import useLogIn from "../hooks/useLogIn";
 
-const SignUpPage = () => {
-  const { signUp } = useSignUp();
+const LogIn = () => {
+  const { login } = useLogIn();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -10,7 +10,7 @@ const SignUpPage = () => {
     const validate1 = email.length > 4;
     const validate2 = password.length >= 8;
     if (validate1 && validate2) {
-      signUp({ email, password });
+      login({ email, password });
     } else if (!validate1) {
       alert("Incorrect Email");
     } else {
@@ -19,12 +19,12 @@ const SignUpPage = () => {
   };
 
   return (
-    <>
+    <div>
       <input value={email} onChange={(e) => setEmail(e.target.value)} />
       <input value={password} onChange={(e) => setPassword(e.target.value)} />
-      <button onClick={validate}>Sign Up</button>
-    </>
+      <button onClick={validate}>Login</button>
+    </div>
   );
 };
 
-export default SignUpPage;
+export default LogIn;

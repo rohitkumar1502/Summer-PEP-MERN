@@ -12,3 +12,10 @@ Day-19-20-21/dist
 Day-19-20-21/node_modules
 Day-19-20-21/server/node_modules
 Day-19-20-21/server/.env
+CloudHome/FrontEnd/node_modules
+CloudHome/FrontEnd/dist
+CloudHome/FrontEnd/.parcel-cache
+CloudHome/BackEnd/node_modules
+CloudHome/BackEnd/.env
+.DS_Store
+Day-19-20-21/.DS_Store

@@ -10,6 +10,8 @@ import HomePage from "./src/pages/homePage";
 import SearchPage from "./src/pages/amazoneSearchPage";
 import ProductInfo from "./src/components/productInfo";
 import AppContext from "./src/contexts/appContext";
+import SignUpPage from "./src/pages/signUppage";
+import LogIn from "./src/pages/logInPage";
 
 const Catoge = [
   "Fresh",
@@ -26,22 +28,31 @@ const Catoge = [
 
 const App = () => {
   const [searchText, setSearchText] = useState("");
+  const [cart, setCart] = useState([]);
+  const [loggedInUser, setLoggedInUser] = useState(null);
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <HomePage />,
+      element: !loggedInUser? <SignUpPage /> : <HomePage />,
     },
     {
       path: "search",
-      element: <SearchPage />,
+      element:!loggedInUser? <SignUpPage /> : <SearchPage />,
     },
     {
       path: "search/:id",
-      element: <ProductInfo />,
+      element:!loggedInUser? <SignUpPage /> : <ProductInfo />,
     },
+    {
+      path: "signup",
+      element: loggedInUser? <HomePage/>: <SignUpPage />
+    },
+    {
+      path: "login",
+      element:loggedInUser? <HomePage/>: <LogIn />
+    }
   ]);
 
-  const [cart, setCart] = useState([]);
   const addToCart = (elem) => {
     console.log(elem);
     const isPresent = cart.findIndex((cI) => cI.id === elem.id);
@@ -66,14 +77,20 @@ const App = () => {
     }
   };
 
+  const appLogin = (user) => {
+    setLoggedInUser(user);
+};
+
   const contextValues = {
+    loggedInUser,
     cart,
     addToCart,
     Catoge,
     searchText,
     setSearchText,
+    appLogin,
   };
-  console.log(cart);
+  console.log("State", loggedInUser);
   return (
     <AppContext.Provider value={contextValues}>
       <RouterProvider router={router} />;

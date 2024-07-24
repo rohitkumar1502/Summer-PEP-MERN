@@ -1,3 +1,4 @@
+import { BiAdjust } from "react-icons/bi"; 
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import CatBar from "../components/categorybar";
@@ -7,12 +8,12 @@ import AppContext from "../contexts/appContext";
 
 
 const SearchPage = (props) => {
-  const { Catoge } = props;
+  // const { Catoge } = props;
   const product = useGetProducts();
-  const { addToCart } = useContext(AppContext);
+  const { addToCart, Catoge } = useContext(AppContext);
   return (
     <>
-      <NavBar />
+      <NavBar /><BiAdjust />
       <CatBar Catoge={Catoge} />
       {/* <div>Text is : {searchText}</div> */}
       {/* <button onClick={getData}>Get Data</button> */}
