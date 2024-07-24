@@ -19,7 +19,9 @@ const HomePage = () => {
   const handleDoubleClick = (elem) => {
     if (elem.type == "folder") {
       setFolderStructure([...folderStructure, elem]);
-    }
+  } else {
+      window.open(elem.link);
+  }
   };
 
   const handleAllowCreateFolder = () => {
@@ -99,7 +101,17 @@ const HomePage = () => {
         <div>
           {fileFolders.map((elem) => {
             return (
-              <div onDoubleClick={() => handleDoubleClick(elem)}>
+              <div
+                style={{
+                  backgroundColor: elem.type === "folder" ? "yellow" : "orange",
+                  border: "1px solid grey",
+                  borderRadius: "8px",
+                  width: "fit-content",
+                  padding: "8px 16px",
+                  margin: "8px 16px",
+                }}
+                onDoubleClick={() => handleDoubleClick(elem)}
+              >
                 <p>{elem.name}</p>
               </div>
             );
