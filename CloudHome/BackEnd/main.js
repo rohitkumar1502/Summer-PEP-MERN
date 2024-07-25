@@ -29,4 +29,4 @@ app.use("/api/v1/file-folder", fileFolderRouter);
 
 app.listen(process.env.PORT, () => {
     console.log("------------- App listening on port " + process.env.PORT + " ------------");
-});
+})

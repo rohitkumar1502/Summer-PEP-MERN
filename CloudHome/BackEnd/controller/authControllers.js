@@ -19,7 +19,7 @@ const generateJWTToken = (obj) => {
 
 const signup = async (req, res) => {
     try {
-        const { email, password } = req.body;
+        const {name, email, password } = req.body;
 
         if (!password || !email) {
             res.status(400).json({
@@ -40,7 +40,7 @@ const signup = async (req, res) => {
             return;
         }
 
-        const newUser = await UserModel.create({ email, password });
+        const newUser = await UserModel.create({ name, email, password });
 
         res.status(201);
         res.json({
@@ -49,6 +49,7 @@ const signup = async (req, res) => {
             data: {
                 user: {
                     _id: newUser._id,
+                    name: newUser.name,
                     email: newUser.email,
                     isEmailVerified: newUser.isEmailVerified,
                 },
