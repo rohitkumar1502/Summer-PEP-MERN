@@ -1,20 +1,21 @@
 .navbar-caontainer {
     display: flex;
     padding: 0.625rem;
-    justify-content: space-between;
-  
+    /* justify-content: space-between; */
+    justify-content: flex-start;
+    gap: 2.4rem;
     align-items: center;
     position: relative;
     left: 15rem;
     top: -3.75rem;
-
-   
-
+    
+    
 
     .SolidStore {
         display: flex;
         align-items: center;
         gap: 0.313rem;
+        padding-right: 32rem;
 
         p {
             color: #000;

@@ -67,7 +67,6 @@ const HomePage = () => {
       <LeftSideNavBar />
       <Navbar />
       <div className="homepage-main-container">
-        <h3>Welcome to Cloud Home</h3>
         <button onClick={handleAllowCreateFolder}>Create Folder</button>
         <input
           className="file-upload-input"
