@@ -3,6 +3,7 @@ import Navbar from "../components/navbar";
 import useCreateFolder from "../hooks/useCreateFolder";
 import useGetFileFolders from "../hooks/useGetFileFolders";
 import useUploadFile from "../hooks/useUploadFile";
+import LeftSideNavBar from "../components/leftsidenavbar";
 
 const HomePage = () => {
   const [newFolder, setNewFolder] = useState("");
@@ -62,7 +63,8 @@ const HomePage = () => {
   };
 
   return (
-    <div>
+    <div className="main">
+      <LeftSideNavBar />
       <Navbar />
       <div className="homepage-main-container">
         <h3>Welcome to Cloud Home</h3>
