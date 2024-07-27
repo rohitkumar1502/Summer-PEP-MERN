@@ -4,6 +4,9 @@ import useCreateFolder from "../hooks/useCreateFolder";
 import useGetFileFolders from "../hooks/useGetFileFolders";
 import useUploadFile from "../hooks/useUploadFile";
 import LeftSideNavBar from "../components/leftsidenavbar";
+import "./homePage.css";
+import { FaPlusSquare } from "react-icons/fa";
+import DroupDownNew from "../components/dropdownnew";
 
 const HomePage = () => {
   const [newFolder, setNewFolder] = useState("");
@@ -11,7 +14,7 @@ const HomePage = () => {
   const [showCreateFolder, setShowCreateFolder] = useState(false);
   const { createFolder } = useCreateFolder();
   const [folderStructure, setFolderStructure] = useState([
-    { _id: null, name: "Cloud Home" },
+    { _id: null, name: "My Files" },
   ]);
   const { getFileFolders, fileFolders } = useGetFileFolders();
 
@@ -20,9 +23,9 @@ const HomePage = () => {
   const handleDoubleClick = (elem) => {
     if (elem.type == "folder") {
       setFolderStructure([...folderStructure, elem]);
-  } else {
+    } else {
       window.open(elem.link);
-  }
+    }
   };
 
   const handleAllowCreateFolder = () => {
@@ -66,14 +69,12 @@ const HomePage = () => {
     <div className="main">
       <LeftSideNavBar />
       <Navbar />
-      <div className="homepage-main-container">
-        <button onClick={handleAllowCreateFolder}>Create Folder</button>
-        <input
-          className="file-upload-input"
-          ref={inputRef}
-          type="file"
-          onChange={handleFileUpload}
-        />
+      <div>
+        <div className="homepage-main-container">
+          <p>Recent</p>
+         <DroupDownNew handleAllowCreateFolder={handleAllowCreateFolder} handleFileUpload= {handleFileUpload}/>
+
+        </div>
         <ul style={{ display: "flex", padding: "24px", gap: "24px" }}>
           {folderStructure.flatMap((elem, indx) => {
             if (elem.name)

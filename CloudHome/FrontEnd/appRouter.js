@@ -8,7 +8,7 @@ import OtpPage from "./src/pages/otpPage";
 
 const AppRouter = () => {
     const { isAuthorized, isEmailVerified } = useSelector((e) => e.auth);
-
+   
     const router = createBrowserRouter([
         {
             path: "/login",

@@ -68,6 +68,7 @@
     visibility: visible;
     transform: translateY(0);
     transition: var(--speed) ease;
+    z-index: 1;
   }
   
   .dropdown-menu.inactive{
